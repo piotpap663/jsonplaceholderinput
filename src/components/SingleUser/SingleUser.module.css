@@ -1,0 +1,14 @@
+.singleUser {
+  list-style-type: decimal;
+  padding-bottom: 10px;
+}
+
+.singleUser::marker,
+.username {
+  color: darkgrey;
+  font-size: 14px;
+}
+
+.username {
+  margin-left: 7px;
+}
