@@ -13,10 +13,8 @@ function UsersList() {
   };
 
   const getFilteredUsers = (searchInput) => {
-    return users.filter(
-      ({ username, name }) =>
-        username.toLowerCase().includes(searchInput.toLowerCase().trim()) ||
-        name.toLowerCase().includes(searchInput.toLowerCase().trim())
+    return users.filter(({ name }) =>
+      name.toLowerCase().includes(searchInput.toLowerCase().trim())
     );
   };
   const memoizedUsers = useMemo(() => getFilteredUsers(searchTerm), [
@@ -40,6 +38,7 @@ function UsersList() {
       <input
         className={styles.userInput}
         type="search"
+        autoFocus
         name="users"
         id="users_list"
         placeholder="Search by user name..."
